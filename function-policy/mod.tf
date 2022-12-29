@@ -6,20 +6,24 @@ terraform {
   }
 }
 
+variable project_name {
+  type = string
+  description = "The AssemblyLift project name in which the service resides"
+}
+
 variable service {
   type = string
+  description = "The name of the AssemblyLift service in which the function resides"
 }
 
 variable function {
   type = string
+  description = "The name of the AssemblyLift function to attach the policy to"
 }
 
 variable policy {
   type = string
-}
-
-variable project_name {
-  type = string
+  description = "The IAM policy contents"
 }
 
 data aws_iam_role role {
